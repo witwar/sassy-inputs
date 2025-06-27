@@ -1,8 +1,13 @@
+@use 'sass:color';
+@use '../helpers/px-to-rem' as *;
+@use '../helpers/appearance' as *;
+@use './vars' as *;
+
 @mixin sassy-radio {
   position: absolute;
   left: -1000rem;
 
-  + label {
+  +label {
     position: relative;
     cursor: pointer;
     margin-right: rem(15);
@@ -27,7 +32,7 @@
     }
   }
 
-  &:checked + label::after {
+  &:checked+label::after {
     content: '';
     position: absolute;
     left: rem(5);
@@ -39,12 +44,12 @@
     text-align: center;
   }
 
-  &:focus + label::before {
-    box-shadow: 0 rem(1) 0 darken($sassy-base-color, 30%);
+  &:focus+label::before {
+    box-shadow: 0 rem(1) 0 color.adjust($sassy-base-color, $lightness: -30%);
   }
 
   &:disabled {
-    + label {
+    +label {
       cursor: not-allowed;
 
       &::before {
@@ -52,8 +57,8 @@
       }
     }
 
-    &:checked + label::after {
-      background-color: darken($sassy-disabled-color, 30%);
+    &:checked+label::after {
+      background-color: color.adjust($sassy-disabled-color, $lightness: -30%);
     }
   }
 }

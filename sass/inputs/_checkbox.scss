@@ -1,3 +1,8 @@
+@use 'sass:color';
+@use '../helpers/px-to-rem' as *;
+@use '../helpers/appearance' as *;
+@use './vars' as *;
+
 @mixin sassy-checkbox {
   position: absolute;
   left: -1000rem;
@@ -45,7 +50,7 @@
   }
 
   &:focus + label::before {
-    box-shadow: 0 rem(1) 0 darken($sassy-base-color, 30%);
+    box-shadow: 0 rem(1) 0 color.adjust($sassy-base-color, $lightness: -30%);
   }
 
   &:disabled {
@@ -58,7 +63,7 @@
     }
 
     &:checked + label::after {
-      border-color: darken($sassy-disabled-color, 30%);
+      border-color: color.adjust($sassy-disabled-color, $lightness: -30%);
     }
   }
 }

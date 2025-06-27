@@ -1,3 +1,8 @@
+@use 'sass:color';
+@use '../helpers/px-to-rem' as *;
+@use '../helpers/appearance' as *;
+@use './vars' as *;
+
 @mixin sassy-text {
   box-sizing: border-box;
 
@@ -9,7 +14,7 @@
   font-size: rem(14);
   vertical-align: middle;
 
-  border: rem(1) solid lighten($sassy-base-color, 10%);
+  border: rem(1) solid color.adjust($sassy-base-color, $lightness: 10%);
   border-radius: rem(3);
   outline: none;
 

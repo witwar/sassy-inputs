@@ -1,12 +1,8 @@
-$sassy-base-color: #777 !default;
-$sassy-accent-color: coral !default;
-$sassy-disabled-color: #eee !default;
+@forward "helpers/px-to-rem";
+@forward "helpers/appearance";
 
-@import "helpers/px-to-rem";
-@import "helpers/appearance";
-
-@import "inputs/text";
-@import "inputs/button";
-@import "inputs/radio";
-@import "inputs/checkbox";
-@import "inputs/select";
+@forward "inputs/text";
+@forward "inputs/button";
+@forward "inputs/radio";
+@forward "inputs/checkbox";
+@forward "inputs/select";
